@@ -1,7 +1,7 @@
 .container {
     display: flex;
 }
-.container__info { 
+.container__info {
     max-width: 80%;
     font-family: monospace;
     text-align: center;
@@ -16,7 +16,7 @@
     font-size: 2.5rem;
 }
 .container__social {
-    color: black; 
+    color: #000;
     margin: 2%;
     font-size: 5rem;
 }
