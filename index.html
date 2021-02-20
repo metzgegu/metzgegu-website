@@ -48,27 +48,27 @@
         .then(response => {
             return response.json();
         })
-        .then(info => console.log(info));
+        .then(info => {
+            document.getElementById('content').setAttribute('content', info['content']);
+            document.getElementById('title').innerHTML = "info['title']";
+            document.getElementById('name').innerHTML = info['name'];
+            document.getElementById('job').innerHTML = info['job'];
+            document.getElementById('github_link').setAttribute('href', info['github_link']);
+            document.getElementById('linkdin_link').setAttribute('href', info['linkdin_link']);
+            document.getElementById('twitter_limk').setAttribute('href', info['twitter_limk']);
+            document.getElementById('email_link').setAttribute('href', info['email_link']);
 
-        document.getElementById('content').setAttribute('content', info['content']);
-        document.getElementById('title').innerHTML = "info['title']";
-        document.getElementById('name').innerHTML = info['name'];
-        document.getElementById('job').innerHTML = info['job'];
-        document.getElementById('github_link').setAttribute('href', info['github_link']);
-        document.getElementById('linkdin_link').setAttribute('href', info['linkdin_link']);
-        document.getElementById('twitter_limk').setAttribute('href', info['twitter_limk']);
-        document.getElementById('email_link').setAttribute('href', info['email_link']);
+            var github_id = info['github_id'];
+            var readme_link = info['readme_link'];
 
-        var github_id = info['github_id'];
-        var readme_link = info['readme_link'];
-
-        GitHubCalendar(".container__calendar", github_id, { responsive: true, global_stats: false });
-        fetch(readme_link).then(res => {
-            res.text().then(text => {
-                const md = window.markdownit();
-                document.getElementById('readme').innerHTML = md.render(text);
+            GitHubCalendar(".container__calendar", github_id, { responsive: true, global_stats: false });
+            fetch(readme_link).then(res => {
+                res.text().then(text => {
+                    const md = window.markdownit();
+                    document.getElementById('readme').innerHTML = md.render(text);
+                })
             })
-        })
+        });
 
     </script>
     </body>
