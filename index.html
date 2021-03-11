@@ -50,7 +50,7 @@
         })
         .then(info => {
             document.getElementById('content').setAttribute('content', info['content']);
-            document.getElementById('title').innerHTML = "info['title']";
+            document.getElementById('title').innerHTML = info['title'];
             document.getElementById('name').innerHTML = info['name'];
             document.getElementById('job').innerHTML = info['job'];
             document.getElementById('github_link').setAttribute('href', info['github_link']);
