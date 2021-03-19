@@ -1,37 +1,34 @@
 .container {
     display: flex;
+    
 }
-.container__info {
+.containerInfos {
     max-width: 60%;
     font-family: monospace;
     text-align: center;
     margin: 0 auto;
 }
-.container__title {
+.containerTitle {
     font-size: 5rem;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 }
-.container__description {
+.containerDescription {
     margin: 2%;
     font-size: 2.5rem;
+    font-weight: normal;
 }
-.container__social {
-    color: #000;
-    margin: 2%;
-    font-size: 5rem;
-}
-.container__calendar {
-    margin-top: 50px;
-}
+
 .wday {
-    margin-right: 5px;
+    margin-right: 0.3125rem;
 }
-i {
+
+
+/* i {
     font-size: 2.3rem;
 }
 i:hover {
     color: #595959;
-}
+} */
 .contrib-legend {
     display: none;
 }
