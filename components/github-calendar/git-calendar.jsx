@@ -1,15 +1,15 @@
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
-import styles from './github-calendar.module.css';
+import styles from './git-calendar.module.css';
 
-export default function GithubCalendarComponent({ githubContribution }) {
-    const values = githubContribution.values
-    const moy = githubContribution.moy
-    const max = githubContribution.max
+export default function GitCalendarComponent({ gitContribution }) {
+    const values = gitContribution.values
+    const moy = gitContribution.moy
+    const max = gitContribution.max
 
     return (
         <div className={styles.calendar}>
-            <h2>GitHub contributions :</h2>
+            <h2>GitHub/GitLab contributions :</h2>
             <CalendarHeatmap
                 startDate={values[0]?.date}
                 endDate={values[values.length - 1]?.date}

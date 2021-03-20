@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/home.module.css'
 import infos from '../data/info.json'
-import GithubCalendar from '../components/github-calendar/github-calendar'
+import GitCalendar from '../components/github-calendar/git-calendar'
 import Readme from '../components/readme/readme'
 import SocialLinks from '../components/social-links/social-links'
-import { getGitHubContributions } from '../utils/action.async'
+import { getGitHubLabContributions } from '../utils/action.async'
 
-export default function Home({ readme, githubContribution }) {
+export default function Home({ readme, gitContribution }) {
   return (
     <div>
       <Head>
@@ -39,7 +39,7 @@ export default function Home({ readme, githubContribution }) {
             <h1 className={styles.containerTitle}>{infos.name}</h1>
             <h2 className={styles.containerDescription}>{infos.job}</h2>
             {readme && <Readme content={readme} />}
-            {githubContribution && <GithubCalendar githubContribution={githubContribution} />}
+            {gitContribution && <GitCalendar gitContribution={gitContribution} />}
             <SocialLinks 
               github={infos.github_link}
               linkedin={infos.linkedin_link} 
@@ -55,9 +55,9 @@ export default function Home({ readme, githubContribution }) {
 export async function getStaticProps() {
   const res = await fetch(infos.readme_link)
   const readme = await res.text()
-  const githubContribution = await getGitHubContributions(process.env.READ_USER_TOKEN, 'metzgegu')
+  const gitContribution = await getGitHubLabContributions(process.env.READ_USER_TOKEN, 'metzgegu')
 
   return {
-    props: { readme, githubContribution },
+    props: { readme, gitContribution },
   }
 }
