@@ -4,8 +4,9 @@ import infos from '../data/info.json'
 import GithubCalendar from '../components/github-calendar/github-calendar'
 import Readme from '../components/readme/readme'
 import SocialLinks from '../components/social-links/social-links'
+import { getGitHubContributions } from '../utils/action.async'
 
-export default function Home({ readme }) {
+export default function Home({ readme, githubContribution }) {
   return (
     <div>
       <Head>
@@ -37,8 +38,8 @@ export default function Home({ readme }) {
           <div className={styles.containerInfos}>
             <h1 className={styles.containerTitle}>{infos.name}</h1>
             <h2 className={styles.containerDescription}>{infos.job}</h2>
-            <Readme content={readme} />
-            <GithubCalendar githubId={infos.github_id} />
+            {readme && <Readme content={readme} />}
+            {githubContribution && <GithubCalendar githubContribution={githubContribution} />}
             <SocialLinks 
               github={infos.github_link}
               linkedin={infos.linkedin_link} 
@@ -54,14 +55,9 @@ export default function Home({ readme }) {
 export async function getStaticProps() {
   const res = await fetch(infos.readme_link)
   const readme = await res.text()
-
-  if (!readme) {
-    return {
-      notFound: true,
-    }
-  }
+  const githubContribution = await getGitHubContributions(process.env.READ_USER_TOKEN, 'metzgegu')
 
   return {
-    props: { readme },
+    props: { readme, githubContribution },
   }
 }

@@ -1,3 +1,5 @@
 .calendar {
     margin-top: 3.125rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
 }
