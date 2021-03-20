@@ -5,8 +5,7 @@ import GithubCalendar from '../components/github-calendar/github-calendar'
 import Readme from '../components/readme/readme'
 import SocialLinks from '../components/social-links/social-links'
 
-
-export default function Home({readme}) {
+export default function Home({ readme }) {
   return (
     <div>
       <Head>
