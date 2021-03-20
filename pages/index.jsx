@@ -36,7 +36,6 @@ export default function Home({ readme, gitContribution }) {
 
       <main className={styles.container}>
           <div className={styles.containerInfos}>
-            <h1 className={styles.containerTitle}>{infos.name}</h1>
             <h2 className={styles.containerDescription}>{infos.job}</h2>
             {readme && <Readme content={readme} />}
             {gitContribution && <GitCalendar gitContribution={gitContribution} />}
