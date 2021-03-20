@@ -6,6 +6,7 @@
     font-family: monospace;
     text-align: center;
     margin: 0 auto;
+    max-width: 60rem;
 }
 .containerTitle {
     font-size: 5rem;
