@@ -59,5 +59,6 @@ export async function getStaticProps() {
 
   return {
     props: { readme, gitContribution },
+    revalidate: 60
   }
 }
