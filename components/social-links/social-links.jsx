@@ -2,7 +2,7 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faAt } from "@fortawesome/free-solid-svg-icons";
+import { faAt, faFile } from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link'
 import styles from './social-links.module.css'
 
@@ -24,7 +24,7 @@ export default function SocialLinks({github, linkedin, twitter, email}) {
             <Link href={email}>
                 <a target="_blank"><FontAwesomeIcon icon={faAt} /></a>
             </Link>
-           
+           <Link href={'/cv'}><a target="_blank"><FontAwesomeIcon icon={faFile} /></a></Link>
       </div>
     );
 }
