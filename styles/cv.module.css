@@ -6,6 +6,7 @@
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: row;
+    font-size: 0.9rem;
 }
 
 .container h2 {
@@ -41,7 +42,11 @@
 }
 
 .item {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+}
+
+.item > ul > li {
+    margin-bottom: 0.15rem;
 }
 
 .item__icons {
@@ -81,9 +86,10 @@
 
 .item__list__subtitle {
     font-weight: 300;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin-top: 0.3rem;
     display: flex;
+    margin-bottom: 0;
 }
 
 .item__list__subtitle > span {
@@ -92,6 +98,30 @@
 }
 
 .item__list__description {
-    margin-top: 0;
+    margin-top: 0.5rem;
     text-align: justify;
+}
+
+@counter-style repeating-emoji {
+    system: cyclic;
+    symbols: "-";
+    suffix: " ";
+}
+
+.item__list__done {
+    list-style-type: repeating-emoji !important;
+    padding: 0.5rem 0 0 1rem !important;
+}
+
+.item__list__done > li {
+    margin-top: 0.1rem;
+}
+
+.item__interests {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item__interests > li {
+    text-align: center;
 }
