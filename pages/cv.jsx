@@ -1,8 +1,18 @@
 import styles from '../styles/cv.module.css'
-import infos from "../data/info.json";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
-export default function Cv() {
+export default function Cv({ locale }) {
+    const { t, i18n } = useTranslation('cv')
+    const router = useRouter()
+
+    const switchLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+        router.push(router.route, router.route, { locale: lng })
+    }
+
     return (
         <>
             <Head>
@@ -18,7 +28,7 @@ export default function Cv() {
                         <div className={styles.item}>
                             <h2 className={styles.item__title}>Guillaume Metzger</h2>
                             <ul className={styles.item__list}>
-                                <li>Né le 27 octobre 1996</li>
+                                <li>{t('Born October 27, 1996')}</li>
                                 <li>1 rue Kléber</li>
                                 <li>38000 GRENOBLE</li>
                                 <li>06 04 49 29 30</li>
@@ -28,128 +38,138 @@ export default function Cv() {
                         </div>
 
                         <div className={styles.item}>
-                            <h2 className={styles.item__title}>Compétences</h2>
+                            <h2 className={styles.item__title}>{t('Skills')}</h2>
                             <ul className={styles.item__icons}>
-                                <li className={styles.item__icon}><img src="assets/icons/react.svg" alt="react" /></li>
-                                <li className={styles.item__icon}><img src="assets/icons/angular.svg" alt="angular" /></li>
-                                <li className={styles.item__icon}><img src="assets/icons/typescript.svg" alt="typescript" /></li>
-                                <li className={styles.item__icon}><img src="assets/icons/git.svg" alt="git" /></li>
-                                <li className={styles.item__icon}><img src="assets/icons/redux.svg" alt="redux" /></li>
-                                <li className={styles.item__icon}><img src="assets/icons/css.svg" alt="css" /></li>
-                                <li className={styles.item__icon}><img src="assets/icons/cypress.svg" alt="cypress" /></li>
-                                <li className={styles.item__icon}><img src="assets/icons/mocha.svg" alt="mocha" /></li>
+                                <li className={styles.item__icon}><img src="assets/icons/react.svg" alt="react" title="react" /></li>
+                                <li className={styles.item__icon}><img src="assets/icons/angular.svg" alt="angular" title="angular" /></li>
+                                <li className={styles.item__icon}><img src="assets/icons/typescript.svg" alt="typescript" title="typescript" /></li>
+                                <li className={styles.item__icon}><img src="assets/icons/git.svg" alt="git" title="git" /></li>
+                                <li className={styles.item__icon}><img src="assets/icons/redux.svg" alt="redux" title="redux" /></li>
+                                <li className={styles.item__icon}><img src="assets/icons/css.svg" alt="css" title="css" /></li>
+                                <li className={styles.item__icon}><img src="assets/icons/cypress.svg" alt="cypress" title="cypress" /></li>
+                                <li className={styles.item__icon}><img src="assets/icons/mocha.svg" alt="mocha" title="mocha" /></li>
                             </ul>
                         </div>
 
                         <div className={styles.item}>
-                            <h2 className={styles.item__title}>Langues</h2>
+                            <h2 className={styles.item__title}>{t('Languages')}</h2>
                             <ul className={styles.item__list}>
-                                <li>Anglais niveau B1</li>
-                                <li>Allemand niveau A2</li>
-                                <li>Chinois niveau A2</li>
+                                <li>{t("French - Mother tongue")}</li>
+                                <li>{t("English - Professional working proficiency")}</li>
+                                <li>{t("German - Elementary proficiency")}</li>
+                                <li>{t("Chinese - Elementary proficiency")}</li>
                             </ul>
                         </div>
 
                         <div className={styles.item}>
-                            <h2 className={styles.item__title}>Vie associative</h2>
+                            <h2 className={styles.item__title}>{t('Community life')}</h2>
                             <ul className={styles.item__list}>
-                                <li>Membre actif du BDE MIAGE</li>
-                                <li> Grenoble 2017-1019</li>
+                                <li>{t('Active member of the MIAGE student Union')}</li>
+                                <li>Grenoble 2017-1019</li>
                             </ul>
                         </div>
                     </div>
 
                     <div className={styles.right}>
                         <div className={styles.item}>
-                            <h2 className={styles.item__title}>Expérience professionnelle</h2>
+                            <h2 className={styles.item__title}>{t('Work experience')}</h2>
                             <ul className={styles.item__list}>
                                 <li>
-                                    <h3 className={styles.item__list__title}>Ingénieur Front-end</h3>
-                                    <p className={styles.item__list__subtitle}>Wizbii · Grenoble <span>2020 - aujourd'hui</span></p>
+                                    <h3 className={styles.item__list__title}>{t('Front-end engineer')}</h3>
+                                    <p className={styles.item__list__subtitle}>Wizbii · Grenoble <span>2020 - {t('today')}</span></p>
                                     <ul className={styles.item__list__done}>
-                                        <li>Développement d’un SaaS pour de grandes banques européene</li>
-                                        <li>Développement d'un back-office interne</li>
-                                        <li>Conception et développement d'une homepage en Next.js</li>
-                                        <li>Ecriture de tests unitaire et fonctionnel avec jest et cypress</li>
+                                        <li>{t("Development of a SaaS for large European banks")}</li>
+                                        <li>{t("Development of an internal back-office")}</li>
+                                        <li>{t("Design and development of a homepage in Next.js")}</li>
+                                        <li>{t("Writing unit and functional tests with jest and cypress")}</li>
                                     </ul>
                                     <p className={styles.item__list__description}>Stack : Angular, Typescript, NGXS, Symfony...</p>
                                 </li>
                                 <li>
-                                    <h3 className={styles.item__list__title}>Stage et alternance développeur Front-end</h3>
+                                    <h3 className={styles.item__list__title}>{t('Front-end developer internship')}</h3>
                                     <p className={styles.item__list__subtitle}>Algoo · Moirans <span>2019 - 2020</span></p>
                                     <ul className={styles.item__list__done}>
-                                        <li>Développment d'une plateforme de travail en équipe : Tracim</li>
-                                        <li>Participer à la gestion d'un projet open source via github</li>
-                                        <li>Développement de POC pour implémenter de nouvelles fonctionnalités</li>
-                                        <li>Ecriture de tests unitaire et fonctionnel avec mocha, enzyme et cypress</li>
+                                        <li>{t('Development of a teamwork platform - Tracim')}</li>
+                                        <li>{t('Take part in the management of an open source project through Github')}</li>
+                                        <li>{t('Development of POCs to add new features')}</li>
+                                        <li>{t('Writing unit and functional tests with mocha, enzyme and cypress')}</li>
                                     </ul>
                                     <p className={styles.item__list__description}>Stack : React, Redux, Cypress, Mocha, i18n...</p>
                                 </li>
                                 <li>
-                                    <h3 className={styles.item__list__title}>Stage développeur Java</h3>
+                                    <h3 className={styles.item__list__title}>{t('Java internship')}</h3>
                                     <p className={styles.item__list__subtitle}>PDS Life Science · Pratteln <span>2018</span></p>
                                     <p className={styles.item__list__description}>
-                                        Projet d'application web facilitant la gestion de données présentes dans des fichiers pdf
+                                        {t('Web application project facilitating the management of data present in pdf files')}
                                     </p>
                                 </li>
                                 <li>
-                                    <h3 className={styles.item__list__title}>Stage développeur Java</h3>
+                                    <h3 className={styles.item__list__title}>{t('Java internship')}</h3>
                                     <p className={styles.item__list__subtitle}>PDS Life Science · Pratteln <span>2016</span></p>
-                                    <p className={styles.item__list__description}>Projet de transformation de données au sein de
-                                        l’équipe de développement pendant un stage de 5 semaines</p>
+                                    <p className={styles.item__list__description}>
+                                        {t('Data transformation project in the development team for a period of 5 weeks')}
+                                    </p>
                                 </li>
                                 <li>
-                                    <h3 className={styles.item__list__title}>Stage développeur Web</h3>
+                                    <h3 className={styles.item__list__title}>{t('Web developer internship')}</h3>
                                     <p className={styles.item__list__subtitle}>Optimistic-Traveler · Strasbourg <span>2015</span></p>
-                                    <p className={styles.item__list__description}>Développement de sites web pour le groupe
-                                        Optimistic-Traveler pendant 5 semaines</p>
+                                    <p className={styles.item__list__description}>
+                                        {t('Website development for the Optimistic-Traveler group during 5 weeks')}</p>
                                 </li>
                             </ul>
                         </div>
 
                         <div className={styles.item}>
-                            <h2 className={styles.item__title}>Formations</h2>
+                            <h2 className={styles.item__title}>{t('Education')}</h2>
                             <table className={styles.table__items}>
                                 <tr className={styles.table__item}>
                                     <td className={styles.table__date}>2017 - 2020</td>
-                                    <td>Master MIAGE Im2ag Grenoble</td>
+                                    <td>{t("Master's Degree in Computer Science Applied to Business Administration (MIAGE) Im2ag Grenoble")}</td>
                                 </tr>
                                 <tr className={styles.table__item}>
                                     <td className={styles.table__date}>2016 - 2017</td>
-                                    <td>Licence MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprise) Im2ag
-                                        Grenoble
-                                    </td>
+                                    <td>{t("MIAGE Bachelor's degree Im2ag Grenoble")}</td>
                                 </tr>
                                 <tr className={styles.table__item}>
                                     <td className={styles.table__date}>2014 - 2016</td>
-                                    <td>BTS SIO (Service Informatique aux Organisations spécialité développement) Lycée Camille
-                                        Sée Colmar
-                                    </td>
+                                    <td>{t('Higher National Diploma in Computer Science Lycée Camille Sée Colmar')}</td>
                                 </tr>
                                 <tr className={styles.table__item}>
                                     <td className={styles.table__date}>2011 - 2014</td>
-                                    <td>Baccalauréat Scientifique Lycée Jean Jacques Henner Altkirch</td>
+                                    <td>{('High school diploma Lycée Jean Jacques Henner Altkirch')}</td>
                                 </tr>
                             </table>
                         </div>
 
                         <div className={styles.item}>
-                            <h2 className={styles.item__title}>Centres d’intérêts</h2>
+                            <h2 className={styles.item__title}>{t('Hobbies')}</h2>
                             <ul className={styles.item__interests}>
                                 <li className={styles.item__icon}>
-                                    <img src="assets/icons/ski.svg" alt="ski" /><p> Ski</p>
+                                    <img src="assets/icons/ski.svg" alt="ski" /><p>Ski</p>
                                 </li>
                                 <li className={styles.item__icon}>
-                                    <img src="assets/icons/film.svg" alt="film" /><p> Cinéma</p>
+                                    <img src="assets/icons/film.svg" alt="film" /><p>{t('Cinema')}</p>
                                 </li>
                                 <li className={styles.item__icon}>
-                                    <img src="assets/icons/f1.svg" alt="f1" /><p> Sport auto (simracing)</p>
+                                    <img src="assets/icons/f1.svg" alt="f1" /><p>{t('Motorsport (simracing)')}</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
+                <select name="languages" className={styles.languageSelect} defaultValue={locale} onChange={(event) => switchLanguage(event.target.value)}>
+                    <option value="fr">🇫🇷</option>
+                    <option value="en">🇬🇧</option>
+                </select>
             </body>
         </>
     )
 }
+
+export const getStaticProps = async ({ locale }) => ({
+    props: {
+        ...await serverSideTranslations(locale, ['cv']),
+        locale
+    },
+})
