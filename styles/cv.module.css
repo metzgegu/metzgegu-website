@@ -125,3 +125,8 @@
 .item__interests > li {
     text-align: center;
 }
+.languageSelect {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}

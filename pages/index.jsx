@@ -5,8 +5,12 @@ import GitCalendar from '../components/github-calendar/git-calendar'
 import Readme from '../components/readme/readme'
 import SocialLinks from '../components/social-links/social-links'
 import { getGitHubLabContributions } from '../utils/action.async'
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home({ readme, gitContribution }) {
+  const { t } = useTranslation('common');
+
   return (
     <div>
       <Head>
@@ -57,13 +61,17 @@ export default function Home({ readme, gitContribution }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const res = await fetch(infos.readme_link)
   const readme = await res.text()
   const gitContribution = await getGitHubLabContributions(process.env.READ_USER_TOKEN, 'metzgegu')
 
   return {
-    props: { readme, gitContribution },
+    props: {
+      readme,
+      gitContribution,
+      ...await serverSideTranslations(locale, ['common']),
+    },
     revalidate: 60
   }
 }
