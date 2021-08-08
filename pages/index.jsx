@@ -44,11 +44,12 @@ export default function Home({ readme, gitContribution }) {
             <h2 className={styles.containerDescription}>{infos.job}</h2>
             {readme && <Readme content={readme} />}
             {gitContribution && <GitCalendar gitContribution={gitContribution} />}
-            <SocialLinks 
+            <SocialLinks
               github={infos.github_link}
               linkedin={infos.linkedin_link} 
               twitter={infos.twitter_link}
               email={infos.email_link}
+              strava={infos.strava_link}
             />
           </div>
       </main>

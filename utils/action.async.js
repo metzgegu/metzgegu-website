@@ -28,6 +28,9 @@ export async function getGitHubLabContributions(token, username) {
     const gitLabResponse = await fetch(`https://gitlab.com/users/${username}/calendar.json`)
     const gitLabData = await gitLabResponse.json()
     const gitHubData = await gitHubResponse.json()
+    if (!gitHubData?.data?.user?.contributionsCollection?.contributionCalendar?.weeks) {
+        return { values: [], moy: 0, max: 0 };
+    }
     const values = gitHubData.data.user.contributionsCollection.contributionCalendar.weeks
         .flatMap(item => item.contributionDays)
         .map(item => ({ date: item.date, count: item.contributionCount + (gitLabData[item.date] ? gitLabData[item.date]: 0) }))

@@ -1,14 +1,18 @@
-.social a {
-    color: #000;
-    margin: 2%;
-    font-size: 5rem;
+.social {
+    padding-top: 1rem;
 }
 
-.social svg {
+.social a {
+    color: #000;
+    margin: 0 1.5rem;
+    display: inline-flex;
+}
+
+.social img {
     width: 2.75rem;
     height: 2.75rem;
 }
 
-.social svg:hover {
-    color: #595959;
+.social img:hover {
+    opacity: 0.7;
 }
