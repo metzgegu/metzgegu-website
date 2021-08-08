@@ -5,12 +5,9 @@ import GitCalendar from '../components/github-calendar/git-calendar'
 import Readme from '../components/readme/readme'
 import SocialLinks from '../components/social-links/social-links'
 import { getGitHubLabContributions } from '../utils/action.async'
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home({ readme, gitContribution }) {
-  const { t } = useTranslation('common');
-
   return (
     <div>
       <Head>
