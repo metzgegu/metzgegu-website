@@ -69,6 +69,6 @@ export async function getStaticProps({ locale }) {
       gitContribution,
       ...await serverSideTranslations(locale, ['common']),
     },
-    revalidate: 60
+    revalidate: 1
   }
 }
