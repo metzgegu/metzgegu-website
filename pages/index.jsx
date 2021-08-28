@@ -8,15 +8,15 @@ import SocialLinks from '../components/social-links/social-links'
 import { getGitHubLabContributions } from '../utils/action.async'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export default function Home({ readme }) {
+export default function Home({ readme, readUserToken }) {
   const [gitContribution, setGitContribution] = useState()
 
   const fetchGitHubLabContributions = async (userToken, userId) => {
-    const gitContribution = await getGitHubLabContributions(userToken, userId)
-    setGitContribution(gitContribution)
+    const contribution = await getGitHubLabContributions(userToken, userId)
+    setGitContribution(contribution)
   }
 
-  fetchGitHubLabContributions(process.env.READ_USER_TOKEN, 'metzgegu')
+  fetchGitHubLabContributions(readUserToken, 'metzgegu')
 
   return (
     <div>
@@ -71,10 +71,12 @@ export default function Home({ readme }) {
 export async function getStaticProps({ locale }) {
   const res = await fetch(infos.readme_link)
   const readme = await res.text()
+  const readUserToken = process.env.READ_USER_TOKEN
 
   return {
     props: {
       readme,
+      readUserToken,
       ...await serverSideTranslations(locale, ['common']),
     },
     revalidate: 1
