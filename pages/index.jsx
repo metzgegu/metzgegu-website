@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Head from 'next/head'
 import styles from '../styles/home.module.css'
 import infos from '../data/info.json'
@@ -8,7 +9,14 @@ import { getGitHubLabContributions } from '../utils/action.async'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home({ readme }) {
-  const gitContribution = await getGitHubLabContributions(process.env.READ_USER_TOKEN, 'metzgegu')
+  const [gitContribution, setGitContribution] = useState()
+
+  fetchGitHubLabContributions = async (userToken, userId) => {
+    const gitContribution = await getGitHubLabContributions(userToken, userId)
+    setGitContribution(gitContribution)
+  }
+
+  fetchGitHubLabContributions(process.env.READ_USER_TOKEN, 'metzgegu')
 
   return (
     <div>
