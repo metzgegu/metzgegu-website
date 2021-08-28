@@ -11,7 +11,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 export default function Home({ readme }) {
   const [gitContribution, setGitContribution] = useState()
 
-  fetchGitHubLabContributions = async (userToken, userId) => {
+  const fetchGitHubLabContributions = async (userToken, userId) => {
     const gitContribution = await getGitHubLabContributions(userToken, userId)
     setGitContribution(gitContribution)
   }
