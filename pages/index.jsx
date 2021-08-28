@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Head from 'next/head'
 import styles from '../styles/home.module.css'
 import infos from '../data/info.json'
@@ -8,16 +7,7 @@ import SocialLinks from '../components/social-links/social-links'
 import { getGitHubLabContributions } from '../utils/action.async'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export default function Home({ readme, readUserToken }) {
-  const [gitContribution, setGitContribution] = useState()
-
-  const fetchGitHubLabContributions = async (userToken, userId) => {
-    const contribution = await getGitHubLabContributions(userToken, userId)
-    setGitContribution(contribution)
-  }
-
-  fetchGitHubLabContributions(readUserToken, 'metzgegu')
-
+export default function Home({ readme, gitContribution }) {
   return (
     <div>
       <Head>
@@ -71,12 +61,12 @@ export default function Home({ readme, readUserToken }) {
 export async function getStaticProps({ locale }) {
   const res = await fetch(infos.readme_link)
   const readme = await res.text()
-  const readUserToken = process.env.READ_USER_TOKEN
+  const gitContribution = await getGitHubLabContributions(process.env.READ_USER_TOKEN, 'metzgegu')
 
   return {
     props: {
       readme,
-      readUserToken,
+      gitContribution,
       ...await serverSideTranslations(locale, ['common']),
     },
     revalidate: 1
