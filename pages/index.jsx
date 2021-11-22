@@ -50,7 +50,6 @@ export default function Home({ readme, gitContribution }) {
               linkedin={infos.linkedin_link} 
               twitter={infos.twitter_link}
               email={infos.email_link}
-              strava={infos.strava_link}
             />
           </div>
       </main>
