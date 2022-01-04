@@ -76,7 +76,7 @@ export default function Cv({ locale }) {
                             <ul className={styles.item__list}>
                                 <li>
                                     <h3 className={styles.item__list__title}>{t('Front-end engineer')}</h3>
-                                    <p className={styles.item__list__subtitle}>Wizbii · Grenoble <span>2020 - {t('today')}</span></p>
+                                    <p className={styles.item__list__subtitle}>Wizbii · Grenoble <span>2020 - 2021</span></p>
                                     <ul className={styles.item__list__done}>
                                         <li>{t("Development of a SaaS for large European banks")}</li>
                                         <li>{t("Development of an internal back-office")}</li>
