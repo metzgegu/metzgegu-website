@@ -130,8 +130,10 @@
     position: absolute;
     top: 1rem;
     left: 1rem;
-
-    @media print {
-      display:none;
-    } 
 }
+
+@media print {
+    .languageSelect {
+        display:none !important;
+    }
+} 
