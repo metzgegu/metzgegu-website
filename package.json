@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "lint": "standard --fix"
   },
   "dependencies": {
     "marked": "4.0.6",
@@ -16,5 +17,11 @@
     "react-calendar-heatmap": "1.8.1",
     "react-dom": "^17.0.2",
     "sanitize-html": "2.6.0"
+  },
+  "devDependencies": {
+    "standard": "^16.0.4"
+  },
+  "standard": {
+    "globals": ["fetch"]
   }
 }
