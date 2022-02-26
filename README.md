@@ -7,7 +7,7 @@ I'm open to any contribution so feel free to open Issues or PR :)
 
 ### Project
 
-This project have been migrate to Next.js.
+This project have been migrate to Svelte.Js
 
 So to install deps and start the project :
 
