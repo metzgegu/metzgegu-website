@@ -1,6 +1,14 @@
 <script>
   import { setupI18n } from '../services/i18n';
-  import { _, isLoading, locale } from 'svelte-i18n';
+  import {
+    _,
+    isLoading,
+    locale,
+    register,
+    getLocaleFromNavigator,
+    addMessages,
+    init
+  } from 'svelte-i18n';
   setupI18n();
 </script>
 
@@ -11,7 +19,7 @@
     <div class="container">
       <div class="left">
         <div class="item">
-          <img class="pp" src="assets/pp.jpg" alt="Photo de Guillaume" />
+          <img class="pp" src="assets/pp.jpg" alt="Guillaume" />
         </div>
 
         <div class="item">
