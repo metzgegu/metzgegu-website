@@ -7,9 +7,6 @@
 {#if $isLoading}
   <p>Loading</p>
 {:else}
-  <!-- <Head>
-      <title>CV · Guillaume Metzger</title>
-    </Head> -->
   <div>
     <div class="container">
       <div class="left">
@@ -197,10 +194,6 @@
   }
 
   .container h3 {
-    margin: 0;
-  }
-
-  .container h4 {
     margin: 0;
   }
 
