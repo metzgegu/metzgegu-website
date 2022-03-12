@@ -8,9 +8,10 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# svelte.js
+/build
+/.svelte-kit
+/package
 
 # production
 /build
