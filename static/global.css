@@ -2,3 +2,11 @@ body {
   font-family: monospace;
   margin: 0;
 }
+
+.readme h1 {
+    font-size: 2rem;
+}
+
+.readme p {
+    font-size: 1rem;
+}
