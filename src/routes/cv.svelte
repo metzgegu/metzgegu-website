@@ -12,6 +12,10 @@
   setupI18n();
 </script>
 
+<svelte:head>
+	<title>CV · Guillaume Metzger</title>
+</svelte:head>
+
 {#if $isLoading}
   <p>Loading</p>
 {:else}

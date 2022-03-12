@@ -18,6 +18,9 @@
   const readme$ = getReadmeContent();
 </script>
 
+<svelte:head>
+	<title>{infos.title}</title>
+</svelte:head>
 <div class="h-screen flex flex-col justify-center">
   <Header title={infos.name} job={infos.job} />
 
