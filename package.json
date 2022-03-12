@@ -33,6 +33,7 @@
   "type": "module",
   "dependencies": {
     "marked": "^4.0.12",
-    "sanitize-html": "^2.7.0"
+    "sanitize-html": "^2.7.0",
+    "svelte-i18n": "^3.3.13"
   }
 }
