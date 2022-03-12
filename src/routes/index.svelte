@@ -3,9 +3,26 @@
   import infos from '../../static/data/info.json';
   import '../app.css';
   import SocialLinks from '../components/social-links.svelte';
+  import Readme from '../components/readme.svelte';
+
+  async function getReadmeContent() {
+		const res = await fetch(infos.readme_link)
+		const readme = await res.text();
+
+		if (res.ok) {
+			return readme;
+		} else {
+			throw new Error(readme);
+		}
+	}
+  const readme$ = getReadmeContent()
 </script>
 
 <Header title={infos.name} job={infos.job} />
+
+{#await readme$ then readme}
+  <Readme content={readme}></Readme>
+{/await}
 
 <SocialLinks
   github={infos.github_link}
