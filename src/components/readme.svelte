@@ -4,4 +4,8 @@
   export let content;
 </script>
 
-<section class="text-center mt-10 mb-5 readme">{@html sanitizeHtml(marked.parse(content))}</section>
+{#if content}
+  <section class="text-center mt-10 mb-5 readme">
+    {@html sanitizeHtml(marked.parse(content))}
+  </section>
+{/if}

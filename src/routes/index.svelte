@@ -1,10 +1,4 @@
-<script>
-  import Header from '../components/header.svelte';
-  import infos from '../../static/data/info.json';
-  import '../app.css';
-  import SocialLinks from '../components/social-links.svelte';
-  import Readme from '../components/readme.svelte';
-
+<script context="module">
   async function getReadmeContent() {
     const res = await fetch(infos.readme_link);
     const readme = await res.text();
@@ -15,18 +9,36 @@
       throw new Error(readme);
     }
   }
-  const readme$ = getReadmeContent();
+
+  export async function load({ params }) {
+    const readme = await getReadmeContent();
+
+    return {
+      status: 200,
+      props: {
+        readme
+      }
+    };
+  }
+</script>
+
+<script>
+  import Header from '../components/header.svelte';
+  import infos from '../../static/data/info.json';
+  import '../app.css';
+  import SocialLinks from '../components/social-links.svelte';
+  import Readme from '../components/readme.svelte';
+
+  export let readme;
 </script>
 
 <svelte:head>
-	<title>{infos.title}</title>
+  <title>{infos.title}</title>
 </svelte:head>
 <div class="h-screen flex flex-col justify-center">
   <Header title={infos.name} job={infos.job} />
 
-  {#await readme$ then readme}
-    <Readme content={readme} />
-  {/await}
+  <Readme content={readme} />
 
   <SocialLinks
     github={infos.github_link}
