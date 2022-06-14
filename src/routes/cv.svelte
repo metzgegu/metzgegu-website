@@ -73,12 +73,42 @@
             <li>Grenoble 2017-1019</li>
           </ul>
         </div>
+
+        <div class="item">
+          <h2 class="item__title">{$_('Hobbies')}</h2>
+          <ul class="item__interests">
+            <li class="item__icon">
+              <img src="assets/icons/ski.svg" alt="ski" />
+            </li>
+            <li class="item__icon">
+              <img src="assets/icons/film.svg" alt="film" />
+            </li>
+            <li class="item__icon">
+              <img src="assets/icons/f1.svg" alt="Motorsport" />
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="right">
         <div class="item">
           <h2 class="item__title">{$_('Work experience')}</h2>
           <ul class="item__list">
+            <li>
+              <h3 class="item__list__title">{$_('Full-stack engineer')}</h3>
+              <p class="item__list__subtitle">Swile · Full-remote <span>2022 - Present</span></p>
+              <ul class="item__list__done">
+                <li>
+                  {$_(
+                    'Part of the DevX team, work in different transversal subjects in order to improve the developer experience in Swile'
+                  )}
+                </li>
+                <li>{$_('Databases anonymization, TypeScript migration, K8s migration...')}</li>
+              </ul>
+              <p class="item__list__description">
+                Stack : Typescript, Ruby on rails, Postgres, Docker, Kubernetes...
+              </p>
+            </li>
             <li>
               <h3 class="item__list__title">{$_('Front-end engineer')}</h3>
               <p class="item__list__subtitle">Wizbii · Grenoble <span>2020 - 2021</span></p>
@@ -154,24 +184,6 @@
             </tr>
           </table>
         </div>
-
-        <div class="item">
-          <h2 class="item__title">{$_('Hobbies')}</h2>
-          <ul class="item__interests">
-            <li class="item__icon">
-              <img src="assets/icons/ski.svg" alt="ski" />
-              <p>Ski</p>
-            </li>
-            <li class="item__icon">
-              <img src="assets/icons/film.svg" alt="film" />
-              <p>{$_('Cinema')}</p>
-            </li>
-            <li class="item__icon">
-              <img src="assets/icons/f1.svg" alt="f1" />
-              <p>{$_('Motorsport (simracing)')}</p>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
 
@@ -185,12 +197,13 @@
 <style>
   .container {
     width: 816px;
-    background-color: #f0efeb;
+    background-color: #fffcf7;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: row;
     font-size: 0.9rem;
+    color: #32393f;
   }
 
   .container h2 {
@@ -203,8 +216,8 @@
 
   .left {
     flex: 1;
-    background-color: #9a8c98;
-    color: whitesmoke;
+    background-color: #a1b5d8;
+    color: #32393f;
     text-align: center;
   }
 
@@ -299,6 +312,7 @@
   }
 
   .item__interests {
+    color: white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
