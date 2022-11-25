@@ -180,7 +180,7 @@
             </tr>
             <tr class="table__item">
               <td class="table__date">2011 - 2014</td>
-              <td>High school diploma Lycée Jean Jacques Henner Altkirch</td>
+              <td>{$_('High school diploma Lycée Jean Jacques Henner Altkirch')}</td>
             </tr>
           </table>
         </div>
