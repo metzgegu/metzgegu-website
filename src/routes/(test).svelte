@@ -2,4 +2,4 @@
   <title>Test</title>
 </svelte:head>
 
-<div>This is a Test<div>
+<div>This is a Test</div>
