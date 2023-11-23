@@ -22,7 +22,7 @@
           <h2 class="item__title">Guillaume Metzger</h2>
           <ul class="item__list">
             <li>{$_('Born October 27, 1996')}</li>
-            <li>1 rue Kléber</li>
+            <li>21 rue Aimé Requet</li>
             <li>38000 GRENOBLE</li>
             <li>06 04 49 29 30</li>
             <li>Guillaume.metzger5@gmail.com</li>
