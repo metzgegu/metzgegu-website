@@ -99,8 +99,11 @@
               <p class="item__list__subtitle">Swile · Full-remote <span>2022 - Present</span></p>
               <ul class="item__list__done">
                 <li>
+                  {$_('Currently member of a feature team, working on new products')}
+                </li>
+                <li>
                   {$_(
-                    'Part of the DevX team, work in different transversal subjects in order to improve the developer experience in Swile'
+                    'Has been a member of the DevX team for some time, work on different transversal subjects in order to improve the developer experience in Swile'
                   )}
                 </li>
                 <li>{$_('Databases anonymization, TypeScript migration, K8s migration...')}</li>
