@@ -1,5 +1,5 @@
 <script>
-  import { setupI18n } from '../services/i18n';
+  import { setupI18n } from '../../services/i18n';
   import { _, isLoading, locale } from 'svelte-i18n';
   setupI18n();
 </script>
@@ -14,12 +14,12 @@
   <div>
     <div class="container">
       <div class="left">
-        <div class="item">
+        <div class="item flex justify-center">
           <img class="pp" src="assets/pp.jpg" alt="Guillaume" />
         </div>
 
         <div class="item">
-          <h2 class="item__title">Guillaume Metzger</h2>
+          <h2 class="text-xl font-bold mb-6">Guillaume Metzger</h2>
           <ul class="item__list">
             <li>{$_('Born October 27, 1996')}</li>
             <li>21 rue Aimé Requet</li>
@@ -31,33 +31,33 @@
         </div>
 
         <div class="item">
-          <h2 class="item__title">{$_('Skills')}</h2>
+          <h2 class="text-xl font-bold mb-6">{$_('Skills')}</h2>
           <ul class="item__icons">
-            <li class="item__icon">
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/react.svg" alt="react" title="react" />
             </li>
-            <li class="item__icon">
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/angular.svg" alt="angular" title="angular" />
             </li>
-            <li class="item__icon">
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/typescript.svg" alt="typescript" title="typescript" />
             </li>
-            <li class="item__icon"><img src="assets/icons/git.svg" alt="git" title="git" /></li>
-            <li class="item__icon">
+            <li class="item__icon flex justify-center"><img src="assets/icons/git.svg" alt="git" title="git" /></li>
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/redux.svg" alt="redux" title="redux" />
             </li>
-            <li class="item__icon"><img src="assets/icons/css.svg" alt="css" title="css" /></li>
-            <li class="item__icon">
+            <li class="item__icon flex justify-center"><img src="assets/icons/css.svg" alt="css" title="css" /></li>
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/cypress.svg" alt="cypress" title="cypress" />
             </li>
-            <li class="item__icon">
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/mocha.svg" alt="mocha" title="mocha" />
             </li>
           </ul>
         </div>
 
         <div class="item">
-          <h2 class="item__title">{$_('Languages')}</h2>
+          <h2 class="text-xl font-bold mb-6">{$_('Languages')}</h2>
           <ul class="item__list">
             <li>{$_('French - Mother tongue')}</li>
             <li>{$_('English - Professional working proficiency')}</li>
@@ -67,7 +67,7 @@
         </div>
 
         <div class="item">
-          <h2 class="item__title">{$_('Community life')}</h2>
+          <h2 class="text-xl font-bold mb-6">{$_('Community life')}</h2>
           <ul class="item__list">
             <li>{$_('Active member of the MIAGE student Union')}</li>
             <li>Grenoble 2017-1019</li>
@@ -75,15 +75,15 @@
         </div>
 
         <div class="item">
-          <h2 class="item__title">{$_('Hobbies')}</h2>
+          <h2 class="text-xl font-bold mb-6">{$_('Hobbies')}</h2>
           <ul class="item__interests">
-            <li class="item__icon">
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/ski.svg" alt="ski" />
             </li>
-            <li class="item__icon">
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/film.svg" alt="film" />
             </li>
-            <li class="item__icon">
+            <li class="item__icon flex justify-center">
               <img src="assets/icons/f1.svg" alt="Motorsport" />
             </li>
           </ul>
@@ -92,10 +92,10 @@
 
       <div class="right">
         <div class="item">
-          <h2 class="item__title">{$_('Work experience')}</h2>
+          <h2 class="text-xl font-bold mb-6">{$_('Work experience')}</h2>
           <ul class="item__list">
             <li>
-              <h3 class="item__list__title">{$_('Full-stack engineer')}</h3>
+              <h3 class="text-base font-bold">{$_('Full-stack engineer')}</h3>
               <p class="item__list__subtitle">Swile · Full-remote <span>2022 - Present</span></p>
               <ul class="item__list__done">
                 <li>
@@ -108,12 +108,12 @@
                 </li>
                 <li>{$_('Databases anonymization, TypeScript migration, K8s migration...')}</li>
               </ul>
-              <p class="item__list__description">
+              <p class="mb-3.5 mt-2 text-justify">
                 Stack : Typescript, Ruby on rails, Postgres, Docker, Kubernetes...
               </p>
             </li>
             <li>
-              <h3 class="item__list__title">{$_('Front-end engineer')}</h3>
+              <h3 class="text-base font-bold">{$_('Front-end engineer')}</h3>
               <p class="item__list__subtitle">Wizbii · Grenoble <span>2020 - 2021</span></p>
               <ul class="item__list__done">
                 <li>{$_('Development of a SaaS for large European banks')}</li>
@@ -121,10 +121,10 @@
                 <li>{$_('Design and development of a homepage in Next.js')}</li>
                 <li>{$_('Writing unit and functional tests with jest and cypress')}</li>
               </ul>
-              <p class="item__list__description">Stack : Angular, Typescript, NGXS, Symfony...</p>
+              <p class="mb-3.5 mt-2 text-justify">Stack : Angular, Typescript, NGXS, Symfony...</p>
             </li>
             <li>
-              <h3 class="item__list__title">{$_('Front-end developer internship')}</h3>
+              <h3 class="text-base font-bold">{$_('Front-end developer internship')}</h3>
               <p class="item__list__subtitle">Algoo · Moirans <span>2019 - 2020</span></p>
               <ul class="item__list__done">
                 <li>{$_('Development of a teamwork platform - Tracim')}</li>
@@ -134,28 +134,28 @@
                 <li>{$_('Development of POCs to add new features')}</li>
                 <li>{$_('Writing unit and functional tests with mocha, enzyme and cypress')}</li>
               </ul>
-              <p class="item__list__description">Stack : React, Redux, Cypress, Mocha, i18n...</p>
+              <p class="mb-3.5 mt-2 text-justify">Stack : React, Redux, Cypress, Mocha, i18n...</p>
             </li>
             <li>
-              <h3 class="item__list__title">{$_('Java internship')}</h3>
+              <h3 class="text-base font-bold">{$_('Java internship')}</h3>
               <p class="item__list__subtitle">PDS Life Science · Pratteln <span>2018</span></p>
-              <p class="item__list__description">
+              <p class="mb-3.5 mt-2 text-justify">
                 {$_(
                   'Web application project facilitating the management of data present in pdf files'
                 )}
               </p>
             </li>
             <li>
-              <h3 class="item__list__title">{$_('Java internship')}</h3>
+              <h3 class="text-base font-bold">{$_('Java internship')}</h3>
               <p class="item__list__subtitle">PDS Life Science · Pratteln <span>2016</span></p>
-              <p class="item__list__description">
+              <p class="mb-3.5 mt-2 text-justify">
                 {$_('Data transformation project in the development team for a period of 5 weeks')}
               </p>
             </li>
             <li>
-              <h3 class="item__list__title">{$_('Web developer internship')}</h3>
+              <h3 class="text-base font-bold">{$_('Web developer internship')}</h3>
               <p class="item__list__subtitle">Optimistic-Traveler · Strasbourg <span>2015</span></p>
-              <p class="item__list__description">
+              <p class="mb-3.5 mt-2 text-justify">
                 {$_('Website development for the Optimistic-Traveler group during 5 weeks')}
               </p>
             </li>
@@ -163,7 +163,7 @@
         </div>
 
         <div class="item">
-          <h2 class="item__title">{$_('Education')}</h2>
+          <h2 class="text-xl font-bold mb-6">{$_('Education')}</h2>
           <table class="table__items">
             <tr class="table__item">
               <td class="table__date">2017 - 2020</td>
@@ -209,9 +209,9 @@
     color: #32393f;
   }
 
-  .container h2 {
+  /* .container h2 {
     margin: 0;
-  }
+  } */
 
   .container h3 {
     margin: 0;
@@ -292,11 +292,6 @@
   .item__list__subtitle > span {
     flex: 1;
     text-align: end;
-  }
-
-  .item__list__description {
-    margin-top: 0.5rem;
-    text-align: justify;
   }
 
   @counter-style repeating-emoji {
