@@ -41,17 +41,17 @@
 	<menu class="lg:hidden flex flex-row fixed bottom-0 w-full bg-white border-t-2">
 		<li class="flex justify-center flex-1 p-1 {$page.url.pathname === '/' ? 'bg-slate-200' : ''} border-transition">
 			<a class="text-center block cursor-pointer" href="/">
-				<img class="h-16" src="assets/icons/profile.svg" alt="about me" />
+				<img class="h-12" src="assets/icons/profile.svg" alt="about me" />
 			</a>
 		</li>
 		<li class="flex justify-center flex-1 p-1 {$page.url.pathname === '/projects' ? 'bg-slate-200' : ''} border-transition">
 			<a class="text-center block cursor-pointer" href="/projects">
-				<img class="h-16" src="assets/icons/tasks.svg" alt="projects" />
+				<img class="h-12" src="assets/icons/tasks.svg" alt="projects" />
 			</a>
 		</li>
 		<li class="flex justify-center flex-1 p-1 {$page.url.pathname === '/cv' ? 'bg-slate-200' : ''} border-transition">
 			<a class="text-center block cursor-pointer" href="/cv">
-				<img class="h-16" src="assets/icons/doc.svg" alt="cv" />
+				<img class="h-12" src="assets/icons/doc.svg" alt="cv" />
 			</a>
 		</li>
 	</menu>
