@@ -213,10 +213,6 @@
 		color: #32393f;
 	}
 
-	/* .container h2 {
-    margin: 0;
-  } */
-
 	.container h3 {
 		margin: 0;
 	}
@@ -326,7 +322,7 @@
 	.languageSelect {
 		position: absolute;
 		top: 1rem;
-		left: 1rem;
+		right: 1rem;
 	}
 
 	@media print {

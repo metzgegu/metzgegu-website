@@ -9,5 +9,27 @@
 	"twitter_link": "https://twitter.com/metzgegu",
 	"email_link": "mailto:Guillaume.metzger5@gmail.com",
 	"github_id": "metzgegu",
-	"readme_link": "https://raw.githubusercontent.com/metzgegu/metzgegu/master/README.md"
+	"readme_link": "https://raw.githubusercontent.com/metzgegu/metzgegu/master/README.md",
+	"projects": [
+		{
+			"title": "data-grid",
+			"description": "A customizable and extensible React component that can be used to display data in a tabular format",
+			"github_link": "https://github.com/metzgegu/data-grid/"
+		},
+		{
+			"title": "hsk quizz",
+			"description": "A web app to help learning chinese characters from HSK 1 to 6",
+			"github_link": "https://metzgegu.github.io/"
+		},
+		{
+			"title": "msg",
+			"description": "A simple  Real-time messaging using kafka and websocket",
+			"github_link": "https://github.com/metzgegu/msg"
+		},
+		{
+			"title": "metzgegu website",
+			"description": "My personal website which use currently Sveltekit and tailwind, deployed with Vercel",
+			"github_link": "https://github.com/metzgegu/metzgegu-website"
+		}
+	]
 }

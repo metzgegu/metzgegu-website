@@ -10,3 +10,11 @@ body {
 .readme p {
 	font-size: 1rem;
 }
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
