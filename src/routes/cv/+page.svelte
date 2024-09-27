@@ -22,9 +22,7 @@
 					<h2 class="text-xl font-bold mb-6">Guillaume Metzger</h2>
 					<ul class="item__list">
 						<li>{$_('Born October 27, 1996')}</li>
-						<li>21 rue Aimé Requet</li>
 						<li>38000 GRENOBLE</li>
-						<li>06 04 49 29 30</li>
 						<li>Guillaume.metzger5@gmail.com</li>
 						<li>guillaumemetzger.fr</li>
 					</ul>
@@ -80,7 +78,7 @@
 
 				<div class="item">
 					<h2 class="text-xl font-bold mb-6">{$_('Hobbies')}</h2>
-					<ul class="item__interests">
+					<ul class="flex justify-around">
 						<li class="item__icon flex justify-center">
 							<img src="assets/icons/ski.svg" alt="ski" />
 						</li>
@@ -194,7 +192,11 @@
 			</div>
 		</div>
 
-		<select name="languages" class="absolute languageSelect" bind:value={$locale}>
+		<select
+			name="languages"
+			class="p-1 bg-white border-2 border-black cursor-pointer absolute top-4 right-4"
+			bind:value={$locale}
+		>
 			<option value="fr">🇫🇷</option>
 			<option value="en">🇬🇧</option>
 		</select>
@@ -212,10 +214,6 @@
 		font-size: 0.9rem;
 		color: #32393f;
 	}
-
-	/* .container h2 {
-    margin: 0;
-  } */
 
 	.container h3 {
 		margin: 0;
@@ -311,22 +309,6 @@
 
 	.item__list__done > li {
 		margin-top: 0.1rem;
-	}
-
-	.item__interests {
-		color: white;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-
-	.item__interests > li {
-		text-align: center;
-	}
-
-	.languageSelect {
-		position: absolute;
-		top: 1rem;
-		left: 1rem;
 	}
 
 	@media print {
