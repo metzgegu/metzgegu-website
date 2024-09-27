@@ -1,5 +1,4 @@
 <script>
-	import Header from '../components/header.svelte';
 	import infos from '../data/info.json';
 	import '../app.css';
 	import Readme from '../components/readme.svelte';

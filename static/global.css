@@ -11,10 +11,9 @@ body {
 	font-size: 1rem;
 }
 
-@media print
-{    
-    .no-print, .no-print *
-    {
-        display: none !important;
-    }
+@media print {
+	.no-print,
+	.no-print * {
+		display: none !important;
+	}
 }

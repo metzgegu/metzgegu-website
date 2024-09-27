@@ -2,7 +2,7 @@
 	export let github, linkedin, twitter, email;
 </script>
 
-<section class="social text-center text-black w-full">
+<section class="absolute bottom-4 social text-center text-black w-full">
 	{#if github}
 		<a class="inline-flex mx-2" target="_blank" href={github}
 			><img class="h-6 w-6 hover:opacity-70" src="assets/icons/github.svg" alt="github" /></a
